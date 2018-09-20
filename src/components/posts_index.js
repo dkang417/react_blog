@@ -9,7 +9,7 @@ class PostsIndex extends Component {
 
   
 
-    // calls for 1 time when component shows up on page
+    // calls for 1 time when component shows up on page (once componenet is renderd to dom it is called)
     componentDidMount() {
         this.props.fetchPosts();
     }
