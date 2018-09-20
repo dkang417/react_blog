@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 import { connect } from 'react-redux';
 import { fetchPosts } from '../actions';
+// to navigate in our react app in place of anchor tags
+import { Link } from 'react-router-dom';
 
 class PostsIndex extends Component {
 
@@ -26,6 +28,11 @@ class PostsIndex extends Component {
         // console.log(this.props.posts);
         return (
             <div>
+                <div className="text-xs-right">
+                    <Link className="btn btn-primary" to="/posts/new">
+                        Add a Post
+                    </Link>    
+                </div>
                 <h3>Posts</h3>
                 <ul className="list-group">
                 {this.renderPosts()}    
