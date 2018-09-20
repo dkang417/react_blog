@@ -6,15 +6,21 @@ class PostsNew extends Component {
 
     // field argument returns jsx and wires up to Field
     renderField(field) {
+        // es6 refactor
+        const { meta: { touched, error } } = field;
+        const className = `form-group ${touched && error ? 'has-danger' : ''}`;
+        
         return (
-            <div className="form-group">
+            <div className={className}>
                 <label>{field.label}</label>    
                 <input
                     className="form-control"    
                     type="text"
                     {...field.input}
                 />
-                {field.meta.error}
+                <div className="text-help">
+                {touched ? error : ''}
+                </div>
             </div>
         );
     }
